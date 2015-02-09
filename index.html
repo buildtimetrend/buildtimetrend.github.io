@@ -16,6 +16,8 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
+          <a id="forkme_banner" href="https://github.com/buildtimetrend/">View on GitHub</a>
+
           <h1 id="project_title">Buildtime Trend</h1>
           <h2 id="project_tagline">Visualise what's trending in your build process</h2>
         </header>
@@ -68,9 +70,9 @@ Click the image for recently generated trends.</p>
 <p><img src="./images/buildtimetrend_diagram.png" alt="Buildtime Trend Diagram, generated with Draw.io"></a>
 
 <ul>
-<li><a href="/service">Buildtime Trend as a Service</a> : Heroku application that offers Buildtime Trend as a Service. It hosts the dashboard that displays charts, generates status badges and has a service that can be triggered by Travis CI to download and parse Travis CI build logs. It relies on <a href="/python-lib">python-lib</a>.</li>
-<li><a href="/python-client">Python-client</a> : Collection of scripts to generate timestamps as part of a build process. It relies on <a href="/python-lib">python-lib</a>.</li>
-<li><a href="/python-lib">Python-lib</a> : Python library powering <a href="/python-client">python-client</a> and <a href="/service">Buildtime Trend as a Service</a>.</li>
+<li><a href="/service">Buildtime Trend as a Service</a> : Heroku application that offers Buildtime Trend as a Service. It hosts the dashboard that displays charts, generates status badges and has a service that can be triggered by Travis CI to download and parse Travis CI build logs. It relies on <a href="https://github.com/buildtimetrend/python-lib">python-lib</a>.</li>
+<li><a href="/python-client">Python client</a> : Collection of scripts to generate timestamps as part of a build process. It relies on <a href="https://github.com/buildtimetrend/python-lib">python-lib</a>.</li>
+<li><a href="https://github.com/buildtimetrend/python-lib">Python library</a> : Python library powering <a href="/python-client">python-client</a> and <a href="/service">Buildtime Trend as a Service</a>.</li>
 <li><a href="https://github.com/buildtimetrend/dashboard">Dashboard</a> : Bootstrap powered HTML dashboard displaying trends and metrics generated from buildtime data using the <a href="https://keen.io">Keen.io</a> JavaScript SDK.<br />
 The dashboard is hosted on <a href="/service">Buildtime Trend as a Service</a>, is automatically deployed by the <a href="/python-client">python-client</a>, but can also be used stand alone.</li>
 </ul>
