@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Buildtime trend : Gather data, analyse and visualise trends of build processes on Continuous Integration platforms">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Buildtime Trend</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <h1 id="project_title">Buildtime Trend</h1>
+          <h2 id="project_tagline">Visualise what's trending in your build process</h2>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+<h2>
+<a id="example-of-build-stages-trend" class="anchor" href="#example-of-build-stages-trend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dashboard example</h2>
+
+<p><a href="http://buildtimetrend.herokuapp.com/dashboard/buildtimetrend/python-lib/"><img src="./images/screenshot_buildtimetrend.png" alt="Buildtime Trend Dashboard"></a>
+Click the image for recently generated trends.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Get timing data from stages in a build process</li>
+<li>Store, analyse and create trends of the build process data
+
+<ul>
+<li>using the service : it is triggered when the Travis CI build process is finished. The service retrieves build data and the logfile, which is parsed to extract the timing data. The processed timing data is stored in the Keen.io database.</li>
+<li>the client has two modes :
+<ul>
+<li>keen mode : send timing data to Keen.io and use the Keen.io API for analysis and visualisation</li>
+<li>native mode : store data in xml format and use matplotlib to generate a chart (limited)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>Current charts and trends</h3>
+
+<ul>
+<li>number of builds, successful and failed</li>
+<li>average build duration</li>
+<li>chart with build stage durations</li>
+<li>builds per branch</li>
+<li>different time periods can be selected</li>
+</ul>
+
+<h2>
+<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it?</h2>
+
+<p>Buildtime Trend consists of several subprojects :</p>
+
+
+<p><img src="./images/buildtimetrend_diagram.png" alt="Buildtime Trend Diagram, generated with Draw.io"></a>
+
+<ul>
+<li><a href="/service">Buildtime Trend as a Service</a> : Heroku application that offers Buildtime Trend as a Service. It hosts the dashboard that displays charts, generates status badges and has a service that can be triggered by Travis CI to download and parse Travis CI build logs. It relies on <a href="/python-lib">python-lib</a>.</li>
+<li><a href="/python-client">Python-client</a> : Collection of scripts to generate timestamps as part of a build process. It relies on <a href="/python-lib">python-lib</a>.</li>
+<li><a href="/python-lib">Python-lib</a> : Python library powering <a href="/python-client">python-client</a> and <a href="/service">Buildtime Trend as a Service</a>.</li>
+<li><a href="https://github.com/buildtimetrend/dashboard">Dashboard</a> : Bootstrap powered HTML dashboard displaying trends and metrics generated from buildtime data using the <a href="https://keen.io">Keen.io</a> JavaScript SDK.<br />
+The dashboard is hosted on <a href="/service">Buildtime Trend as a Service</a>, is automatically deployed by the <a href="/python-client">python-client</a>, but can also be used stand alone.</li>
+</ul>
+
+<h2>
+<a id="bugs-and-feature-requests" class="anchor" href="#bugs-and-feature-requests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bugs and feature requests</h2>
+
+<p>Please report bugs and add feature requests in the Github <a href="https://github.com/buildtimetrend/python-lib/issues">issue tracker</a>.</p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>For an overview of who contributed to create Buildtime trend, see <a href="https://github.com/buildtimetrend/python-lib/wiki/Credits">Credits</a>.</p>
+
+<h2>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>Mailinglist : <a href="https://groups.google.com/d/forum/buildtimetrend-dev">Buildtime Trend Community</a></p>
+
+<p>Follow us on <a href="https://twitter.com/buildtime_trend">Twitter</a>, <a href="https://github.com/buildtimetrend">Github</a> and <a href="https://www.openhub.net/p/buildtime-trend">OpenHub</a>.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Buildtime Trend maintained by <a href="https://github.com/buildtimetrend">Buildtime Trend</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-49318924-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
